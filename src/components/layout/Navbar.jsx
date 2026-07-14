@@ -2,7 +2,7 @@ import { FiShoppingCart, FiSearch, FiUser } from "react-icons/fi";
 
 function Navbar() {
     return (
-        <nav className="bg-white shadow-md">
+        <nav className="sticky top-0 z-50 bg-white shadow-md">
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                 {/* Navbar */}
 
@@ -23,13 +23,13 @@ function Navbar() {
                 <div className="flex items-center gap-4">
 
                     {/* Search Box */}
-                    <div className="flex items-center border rounded-lg px-3 py-2">
+                    <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 w-64 focus-within:ring-2 focus-within:ring-blue-500">
                         <FiSearch className="text-gray-500 mr-2" />
 
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="outline-none"
+                            className="outline-none w-full"
                         />
                     </div>
 
@@ -37,6 +37,7 @@ function Navbar() {
                     <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
                         <FiShoppingCart />
                         Cart
+                        <span className="bg-white text-blue-600 text-xs font-bold px-2 py-1 rounded-full">0</span>
                     </button>
 
                     {/* Login Button */}
