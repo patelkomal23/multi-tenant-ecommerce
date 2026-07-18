@@ -39,7 +39,7 @@ function Hero() {
       buttonText: "Explore",
     },
   ];
-return (
+  return (
   <section className="w-full overflow-hidden">
     <Swiper
       modules={[Pagination, Autoplay]}

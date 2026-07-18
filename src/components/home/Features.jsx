@@ -30,30 +30,31 @@ const features = [
 
 function Features() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-10">
-      <div className="bg-white border border-gray-200 rounded-2xl shadow-sm">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="bg-white rounded-3xl border border-gray-200 shadow-lg overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
           {features.map((item, index) => (
             <div
               key={index}
-              className={`flex items-center gap-5 p-8 ${
+              className={`group flex items-center gap-5 p-8 transition-all duration-300 hover:bg-blue-50 hover:-translate-y-1 ${
                 index !== features.length - 1
                   ? "lg:border-r border-gray-200"
                   : ""
               }`}
             >
-              <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-3xl">
+              {/* Icon */}
+              <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
 
+              {/* Content */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-500 text-sm mt-1 leading-6">
+                <p className="text-sm text-gray-500 mt-2 leading-6">
                   {item.description}
                 </p>
               </div>

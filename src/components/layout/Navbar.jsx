@@ -1,180 +1,134 @@
-import {
-    FiSearch,
-    FiShoppingCart,
-    FiUser,
-    FiHeart,
-    FiTruck,
-    FiChevronDown,
-    FiMenu,
-    FiX,
-} from "react-icons/fi";
 import { useState } from "react";
+import {
+  FiSearch,
+  FiShoppingCart,
+  FiUser,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 
 function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [showCategories, setShowCategories] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    return (
-        <nav className="sticky top-0 z-50 bg-white shadow-sm border-b">
-            <div className="max-w-7xl mx-auto px-6 py-4">
+  return (
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-                {/* Desktop Navbar */}
-                <div className="hidden lg:flex items-center justify-between gap-6">
+        {/* Logo */}
+        <h1 className="text-2xl sm:text-3xl font-extrabold  cursor-pointer">
+          <span className="text-blue-600">
+            Shop
+          </span>
+          <span className="text-black">Nest</span>
+        </h1>
 
-                    {/* Logo */}
-                    <h1 className="text-4xl font-bold text-blue-600 cursor-pointer">
-                        ShopNest
-                    </h1>
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex items-center gap-8 font-bold text-gray-900">
+          <li className="cursor-pointer hover:text-blue-600 transition">
+            Home
+          </li>
+          <li className="cursor-pointer hover:text-blue-600 transition">
+            Products
+          </li>
+          <li className="cursor-pointer hover:text-blue-600 transition">
+            Categories
+          </li>
+          <li className="cursor-pointer hover:text-blue-600 transition">
+            Cart
+          </li>
+        </ul>
 
-                    {/* Search Area */}
-                    <div className="flex items-center flex-1 max-w-3xl gap-3">
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
 
-                        {/* Category */}
-                        <div className="relative">
-                            <button
-                                onClick={() => setShowCategories(!showCategories)}
-                                className="flex items-center gap-2 border border-gray-300 rounded-lg px-4 py-3 hover:border-blue-600 transition"
-                            >
-                                <span>All Categories</span>
-                                <FiChevronDown />
-                            </button>
+          {/* Search */}
+          <div className="hidden md:flex items-center border border-gray-300 rounded-full px-4 py-2 bg-gray-50 focus-within:border-blue-500">
+            <FiSearch className="text-gray-500 mr-2" />
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="bg-transparent outline-none w-44"
+            />
+          </div>
 
-                            {showCategories && (
-                                <ul className="absolute left-0 mt-2 w-52 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                                        Home
-                                    </li>
+          {/* Cart */}
+          <button className="relative flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
+            <FiShoppingCart className="text-xl" />
 
-                                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                                        Products
-                                    </li>
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              0
+            </span>
+          </button>
 
-                                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                                        Categories
-                                    </li>
+          {/* Login */}
+          <button className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition">
+            <FiUser />
+            <span>Login</span>
+          </button>
 
-                                    <li className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                                        Cart
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
+          {/* Hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden text-3xl text-gray-700"
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
 
-                        {/* Search */}
-                        <div className="flex flex-1">
-                            <div className="flex items-center w-full border border-gray-300 rounded-l-lg px-4">
-                                <FiSearch className="text-gray-500 mr-2" />
+        </div>
+      </div>
 
-                                <input
-                                    type="text"
-                                    placeholder="Search for products..."
-                                    className="w-full py-3 outline-none"
-                                />
-                            </div>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="lg:hidden bg-white shadow-md border-t">
+          <ul className="flex flex-col p-6 gap-5 font-medium text-gray-700">
+            <li
+              className="cursor-pointer hover:text-blue-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </li>
 
-                            <button className="bg-blue-600 text-white px-6 rounded-r-lg hover:bg-blue-700 transition">
-                                Search
-                            </button>
-                        </div>
-                    </div>
+            <li
+              className="cursor-pointer hover:text-blue-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Products
+            </li>
 
-                    {/* Right Side */}
-                    <div className="flex items-center gap-8">
+            <li
+              className="cursor-pointer hover:text-blue-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Categories
+            </li>
 
-                        <button className="flex items-center gap-2 hover:text-blue-600 transition">
-                            <FiTruck className="text-xl" />
-                            <span>Track Order</span>
-                        </button>
+            <li
+              className="cursor-pointer hover:text-blue-600"
+              onClick={() => setMenuOpen(false)}
+            >
+              Cart
+            </li>
 
-                        <button className="flex items-center gap-2 hover:text-blue-600 transition">
-                            <FiHeart className="text-xl" />
-                            <span>Wishlist</span>
-                        </button>
-
-                        <button className="flex items-center gap-2 hover:text-blue-600 transition">
-                            <FiUser className="text-xl" />
-                            <span>Account</span>
-                        </button>
-
-                        <button className="relative">
-                            <FiShoppingCart className="text-3xl" />
-
-                            <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">
-                                0
-                            </span>
-                        </button>
-
-                    </div>
-                </div>
-
-                {/* Mobile Navbar */}
-                <div className="flex lg:hidden items-center justify-between">
-
-                    <h1 className="text-3xl font-bold text-blue-600">
-                        ShopNest
-                    </h1>
-
-                    <div className="flex items-center gap-4">
-
-                        <button className="relative">
-                            <FiShoppingCart className="text-3xl" />
-
-                            <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">
-                                0
-                            </span>
-                        </button>
-
-                        <button
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            className="text-3xl"
-                        >
-                            {menuOpen ? <FiX /> : <FiMenu />}
-                        </button>
-
-                    </div>
-                </div>
-
-                {/* Mobile Menu */}
-                {menuOpen && (
-                    <div className="lg:hidden mt-6 border-t pt-6 space-y-4">
-
-                        <button className="w-full flex items-center justify-between border rounded-lg px-4 py-3">
-                            <span>All Categories</span>
-                            <FiChevronDown />
-                        </button>
-
-                        <div className="flex">
-                            <input
-                                type="text"
-                                placeholder="Search products..."
-                                className="flex-1 border rounded-l-lg px-4 py-3 outline-none"
-                            />
-
-                            <button className="bg-blue-600 text-white px-5 rounded-r-lg">
-                                <FiSearch />
-                            </button>
-                        </div>
-
-                        <button className="flex items-center gap-3">
-                            <FiTruck />
-                            Track Order
-                        </button>
-
-                        <button className="flex items-center gap-3">
-                            <FiHeart />
-                            Wishlist
-                        </button>
-
-                        <button className="flex items-center gap-3">
-                            <FiUser />
-                            Account
-                        </button>
-
-                    </div>
-                )}
+            {/* Mobile Search */}
+            <div className="flex items-center border rounded-full px-4 py-2">
+              <FiSearch className="mr-2 text-gray-500" />
+              <input
+                type="text"
+                placeholder="Search..."
+                className="outline-none w-full"
+              />
             </div>
-        </nav>
-    );
+
+            {/* Mobile Login */}
+            <button className="flex items-center justify-center gap-2 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
+              <FiUser />
+              Login
+            </button>
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
 }
 
 export default Navbar;
