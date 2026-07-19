@@ -89,7 +89,22 @@ function FeaturedProducts() {
     return (
 
         <section className="max-w-7xl mx-auto px-6 py-20">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-14">Featured Products</h2>
+       <div className="text-center mb-14">
+  <span className="inline-block text-purple-600 font-semibold tracking-[4px] uppercase">
+    Best Sellers
+  </span>
+
+  <h2 className="mt-3 text-4xl md:text-5xl font-black text-slate-900">
+    Featured
+    <span className="text-purple-600"> Products</span>
+  </h2>
+
+  <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full mx-auto mt-4"></div>
+
+  <p className="mt-5 text-gray-500 max-w-xl mx-auto">
+    Discover our most loved products, carefully selected to deliver quality, style, and value.
+  </p>
+</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {products.map((product)=>(
                     <ProductCard

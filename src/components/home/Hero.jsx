@@ -67,14 +67,14 @@ function Hero() {
             {/* Premium Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20"></div>
 
-            {/* Blue Glow */}
-            <div className="absolute left-10 lg:left-24 top-1/2 -translate-y-1/2 w-60 h-60 lg:w-96 lg:h-96 bg-blue-500/20 blur-[120px] rounded-full"></div>
+            {/* purple Glow */}
+            <div className="absolute left-10 lg:left-24 top-1/2 -translate-y-1/2 w-60 h-60 lg:w-96 lg:h-96 bg-purple-500/20 blur-[120px] rounded-full"></div>
 
             {/* Content */}
             <div className="absolute inset-0 flex items-center px-5 sm:px-8 lg:px-20">
               <div className="max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
 
-                <p className="uppercase tracking-[5px] text-blue-400 text-xs sm:text-sm font-semibold mb-3">
+                <p className="uppercase tracking-[5px] text-purple-400 text-xs sm:text-sm font-semibold mb-3">
                   {banner.subtitle}
                 </p>
 
@@ -88,7 +88,7 @@ function Hero() {
 
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
 
-                  <button className="flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/50">
+                  <button className="flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
                     {banner.buttonText}
                     <FiArrowRight />
                   </button>

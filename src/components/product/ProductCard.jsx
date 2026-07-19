@@ -13,7 +13,7 @@ function ProductCard({ product }) {
         />
 
         {/* Badge */}
-        <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
+        <span className="absolute top-3 left-3 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
           {product.badge}
         </span>
 
@@ -40,7 +40,7 @@ function ProductCard({ product }) {
 
         {/* Price */}
         <div className="flex items-center gap-3 mt-3">
-          <span className="text-xl font-bold text-blue-600">
+          <span className="text-xl font-bold text-purple-600">
             ₹{product.price}
           </span>
 
@@ -50,7 +50,7 @@ function ProductCard({ product }) {
         </div>
 
         {/* Button */}
-        <button className="mt-5 w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+        <button className="mt-5 w-full flex items-center justify-center gap-2 bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition">
           <FiShoppingCart />
           Add to Cart
         </button>

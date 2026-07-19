@@ -37,20 +37,20 @@ function Features() {
           {features.map((item, index) => (
             <div
               key={index}
-              className={`group flex items-center gap-5 p-8 transition-all duration-300 hover:bg-blue-50 hover:-translate-y-1 ${
+              className={`group flex items-center gap-5 p-8 transition-all duration-300 hover:bg-purple-50 hover:-translate-y-1 ${
                 index !== features.length - 1
                   ? "lg:border-r border-gray-200"
                   : ""
               }`}
             >
               {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
 
               {/* Content */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
                   {item.title}
                 </h3>
 
